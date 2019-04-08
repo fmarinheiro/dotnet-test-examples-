@@ -1,31 +1,57 @@
-./compose.sh to build docker images 
+Build docker:
+```sh
+$ ./compose.sh
+```
 
-./attach.sh and you're in the container 
-
-Once inside the container
-
-// build
-dotnet build
-
-// change to the project folter 
-cd SimpleToDo
-
-// update the database 
-dotnet ef database update
+ Get in the container:
+```sh
+$ ./attach.sh
+```
 
 
-// run 
-dotnet run
+Once inside...
 
-// access
-http://localhost:8000/
+Go to the web project folder
+```sh
+$ cd SimpleToDo
+```
 
 
+Build the app
+```sh
+$ dotnet build
+```
 
-// running unit tests 
-dotnet test SimpleToDo.Repository.UnitTest/SimpleToDo.Repository.UnitTest.csproj
 
-dotnet test SimpleToDo.Service.UnitTest/SimpleToDo.Service.UnitTest.csproj // No testes yet, maybe for a practical exercise 
+Update the database
+```sh
+$ dotnet ef database update
+```
 
-dotnet test SimpleToDo.Web.UnitTest/SimpleToDo.Web.UnitTest.csproj 
 
+Run 
+```sh
+$ dotnet run
+```
+
+
+Access in your browser
+```sh
+http://localhost:8000
+```
+
+
+Running the unit tests
+```sh
+$ dotnet test SimpleToDo.Repository.UnitTest/SimpleToDo.Repository.UnitTest.csproj
+```
+
+```sh
+$ dotnet test SimpleToDo.Web.UnitTest/SimpleToDo.Web.UnitTest.csproj 
+```
+
+
+// No testes yet, maybe for a practical exercise!?
+```sh
+$ dotnet test SimpleToDo.Service.UnitTest/SimpleToDo.Service.UnitTest.csproj 
+```
