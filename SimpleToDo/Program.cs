@@ -9,7 +9,9 @@ namespace SimpleToDo.Web
     {
         public static void Main(string[] args)
         {
-            var host = CreateWebHostBuilder(args).Build();
+            var host = CreateWebHostBuilder(args)
+                    .UseUrls("http://*:5000")
+                    .Build();
 
             using (var scope = host.Services.CreateScope())
             {

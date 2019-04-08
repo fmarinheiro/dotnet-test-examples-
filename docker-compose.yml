@@ -1,0 +1,20 @@
+version: "3"
+services:
+    web:
+        build: .
+        volumes:
+          - $PWD:/home/app/my-project
+        environment:
+          - HUID=${HUID}
+          - HGID=${HGID}
+        ports:
+          - "8000:5000"
+          - "8001:5001"
+        depends_on:
+          - db
+        #command: cd SimpleToDo && dotnet run
+    db:
+        image: "mcr.microsoft.com/mssql/server"
+        environment:
+            SA_PASSWORD: "Your_password123"
+            ACCEPT_EULA: "Y"
